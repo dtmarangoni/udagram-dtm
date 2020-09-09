@@ -16,7 +16,7 @@ describe('AWS', () => {
     });
 
     it('Can download a photo from a valid S3 signed url', async function () {
-        this.timeout(3500);
+        this.timeout(4000);
         const url = AWS.getGetSignedUrl('xander0.jpg');
         const s3Url = `https://${c.aws_media_bucket}.s3.${c.aws_region}.amazonaws.com`;
         const objectUrl = url.split(s3Url)[1];
