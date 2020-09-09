@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import { filterImageFromURL, deleteLocalFiles } from './util/util';
 import { IndexRouter } from './controllers/V0/index.router';
 
 // The server main entrance function
