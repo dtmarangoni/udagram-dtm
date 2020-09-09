@@ -18,7 +18,7 @@ import { V0MODELS } from './controllers/v0/model.index';
     // Create the Node Express App
     const app = express();
     // Default port to listen
-    const port = process.env.PORT || 8080;
+    const port = process.env.PORT || 8085;
 
     // Body parser middleware
     app.use(bodyParser.json());
@@ -26,7 +26,7 @@ import { V0MODELS } from './controllers/v0/model.index';
     // CORS should be restricted
     app.use(function (req, res, next) {
         // CORS headers
-        res.header('Access-Control-Allow-Origin', 'http://localhost:8100');
+        res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
         res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
         // Proceed to next middleware
