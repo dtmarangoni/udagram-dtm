@@ -9,7 +9,17 @@ import { IndexRouter } from './controllers/V0/index.router';
     const app = express();
 
     // Set the network port
-    const port = process.env.PORT || 8082;
+    const port = process.env.PORT || 8086;
+
+    // CORS should be restricted
+    app.use(function (req, res, next) {
+        // CORS headers
+        res.header('Access-Control-Allow-Origin', 'http://localhost:8085');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+
+        // Proceed to next middleware
+        next();
+    });
 
     // Use the body parser middleware for post requests
     app.use(bodyParser.json());
