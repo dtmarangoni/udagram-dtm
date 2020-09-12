@@ -14,11 +14,11 @@ import { IndexRouter } from './controllers/V0/index.router';
     // CORS should be restricted
     app.use(function (req, res, next) {
         // CORS headers
-        res.header('Access-Control-Allow-Origin', 'http://localhost:8085');
+        res.header('Access-Control-Allow-Origin', 'http://restapi.udagram-dtm.com');
         res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
         // Proceed to next middleware
-        next();
+        return next();
     });
 
     // Use the body parser middleware for post requests
@@ -30,7 +30,7 @@ import { IndexRouter } from './controllers/V0/index.router';
     // Root Endpoint
     // Displays a simple message to the user
     app.get('/', async (req, res) => {
-        res.send('try GET /api/v0/filteredimage?image_url={{}}');
+        return res.send('Image Filtering Microservice');
     });
 
     // Start the Server
