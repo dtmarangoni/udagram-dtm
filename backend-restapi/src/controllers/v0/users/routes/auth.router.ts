@@ -22,8 +22,15 @@ async function comparePasswords(plainTextPassword: string, hash: string): Promis
 }
 
 // Create a user signed JWT token
-function generateJWT(user: User): string {
+function generateUserJWT(user: User): string {
+    // For testing purpose the expiration date of the token has been
+    // increased.
     return jwt.sign({ email: user.email }, config.dev.jwt_secret, { expiresIn: '60 days' });
+}
+
+// Create the REST API client id token
+export function generateClientIDJWT(): string {
+    return jwt.sign({ client_id: config.dev.restapi_client_id }, config.dev.restapi_private_key, { expiresIn: 5 * 60 });
 }
 
 // Middleware to validate if a valid user JWT auth token was sent in
@@ -90,10 +97,10 @@ router.post('/login', async (req: Request, res: Response) => {
     }
 
     // After a successful login, generate the user JWT token
-    const jwt = generateJWT(user);
+    const jwt = generateUserJWT(user);
 
     // Respond with the JWT token and with the logged user email.
-    res.status(200).send({ auth: true, token: jwt, user: user.short() });
+    return res.status(200).send({ auth: true, token: jwt, user: user.short() });
 });
 
 // Register a new user
@@ -136,15 +143,15 @@ router.post('/', async (req: Request, res: Response) => {
     }
 
     // Generate a signed user JWT token
-    const jwt = generateJWT(savedUser);
+    const jwt = generateUserJWT(savedUser);
 
     // Respond with the user JWT and email address
-    res.status(201).send({ token: jwt, user: savedUser.short() });
+    return res.status(201).send({ token: jwt, user: savedUser.short() });
 });
 
 // Send a description of this route root
 router.get('/', async (req: Request, res: Response) => {
-    res.send('auth');
+    return res.send('auth');
 });
 
 // The auth router

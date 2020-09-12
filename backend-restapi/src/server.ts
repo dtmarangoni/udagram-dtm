@@ -2,11 +2,10 @@
 
 import express from 'express';
 import { sequelize } from './sequelize';
-
-import { IndexRouter } from './controllers/v0/index.router';
-
 import bodyParser from 'body-parser';
 
+import { setCORS } from './CORS.middleware';
+import { IndexRouter } from './controllers/v0/index.router';
 import { V0MODELS } from './controllers/v0/model.index';
 
 // The main method
@@ -24,21 +23,14 @@ import { V0MODELS } from './controllers/v0/model.index';
     app.use(bodyParser.json());
 
     // CORS should be restricted
-    app.use(function (req, res, next) {
-        // CORS headers
-        res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
-        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-
-        // Proceed to next middleware
-        next();
-    });
+    app.use(setCORS);
 
     // The router to use for API version V0
     app.use('/api/v0/', IndexRouter);
 
     // Root URI call
     app.get('/', async (req, res) => {
-        res.send('/api/v0/');
+        return res.send('Backend REST API');
     });
 
     // Start the Node Express server
