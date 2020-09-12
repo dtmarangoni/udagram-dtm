@@ -6,11 +6,23 @@ The App is deployed in AWS S3 as a static web application and it consumes the No
 
 All frontend code was provided as part of the course.
 
-## Registered Domain
+## Installation instructions
 
-A new domain name was registered to this application, please check it below:
+The app is deployed in the cloud, but if you want to run it locally please the instructions below.
 
--   [Udagram Ionic Frontend](http://www.udagram-dtm.com.br)
+1. Requirements:
+
+    - [Install Node.js](https://nodejs.org/en/) (tested with Node.Js 14);
+    - [Install Ionic](https://ionicframework.com/docs/intro/cli).
+
+2. Download and install the required npm packages: `npm i`
+3. Run de dev server: `npm run dev`
+
+## Registered Subdomain
+
+A new domain was registered in AWS Route53 and a subdomain was set for this application:
+
+-   [Udagram Ionic Frontend](http://www.udagram-dtm.com)
 
 ## Reference
 

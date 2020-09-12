@@ -14,16 +14,23 @@ These are the components that compose the complete solution:
 
 The Ionic frontend is deployed in AWS S3 as a static web application and it consumes the Node-Express REST API.
 
-The REST API is deployed in AWS Elastic Beanstalk and it communicates with a S3 file store, with the RDS database and with the image filtering microservice.
+The REST API is deployed in AWS Elastic Beanstalk and it communicates with the Ionic Frontend, a S3 file store, with the RDS database and with the image filtering microservice.
 
 Lastly, the image filtering microservice is deployed in another AWS Elastic Beanstalk.
 
+The project challenges were implemented:
+
+-   REST API communicates with the image filtering microservice;
+-   The image filtering endpoint is protected with client id token and access token;
+-   A new domain and subdomains were registered in AWS Route53 for this application.
+
+For more details on which implementation and changes according to the project specification, please visit each application sub-folder README.
+
 ## Domain Name
 
-Project domain name:
+A new domain was registered in AWS Route53 for this application: udagram-dtm.com
+And subdomains were assigned to ionic frontend, backend REST API and image microservice:
 
--   udagram-dtm.com.br
-
-Web application address:
-
--   http://www.udagram-dtm.com.br
+-   [Udagram Ionic Frontend](http://www.udagram-dtm.com)
+-   [Udagram Backend REST API](http://restapi.udagram-dtm.com)
+-   [Udagram Image Filtering Microservice](http://imgmicroservice.udagram-dtm.com)
