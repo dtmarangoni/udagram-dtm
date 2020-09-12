@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "29f68742-7fe6-476f-b0e5-e42513e95e95",
+		"_postman_id": "a3b5f10a-c19e-4bc7-a71c-c886a39f1ed1",
 		"name": "udagram-backend-restapi",
 		"description": "Requests that should work!",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "df60e4ac-33d4-4e00-8d85-75ba4681ec42",
+								"id": "ab638747-c3a1-46d2-b212-e82396e27e45",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -54,7 +54,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bc39d155-995b-4cec-91e3-2ef8314a105f",
+								"id": "1e2b8af4-1007-4f16-b173-6195216c93bb",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -73,7 +73,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/v0/feed/2",
+							"raw": "{{host}}/api/v0/feed/9",
 							"host": [
 								"{{host}}"
 							],
@@ -81,7 +81,7 @@
 								"api",
 								"v0",
 								"feed",
-								"2"
+								"9"
 							],
 							"query": [
 								{
@@ -165,7 +165,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d7552e49-7c22-4331-b409-1a6e35e5a757",
+								"id": "73d41e8b-4400-411c-8bcc-36ccdb89198c",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -215,7 +215,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "147bdd32-46f5-4d8b-8cec-c6bd4410ff71",
+								"id": "bb2752a8-b9b8-42eb-ba31-6542b87850c7",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -266,7 +266,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "53c2a5c0-07f2-4ba0-adc4-92f278755080",
+								"id": "e7a43d49-0e76-43a2-8a36-8e090e86c992",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -296,7 +296,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\":\"hello@gmail.com\",\n\t\"password\":\"fancypass\"\n}"
+							"raw": "{\n\t\"email\":\"test@test.com\",\n\t\"password\":\"123\"\n}"
 						},
 						"url": {
 							"raw": "{{host}}/api/v0/users/auth/login",
@@ -320,7 +320,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fac2ac75-8a9f-4e34-a507-030e1df80ada",
+								"id": "7647fa81-292b-465f-ab3e-5f168e65b41d",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -378,7 +378,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bb83d8e2-85d3-41d6-87bd-52679964b619",
+								"id": "17f8a3ec-25af-481b-8150-d2718fad3fb0",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -422,7 +422,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "531e8343-974b-4356-ba46-efe69cdf1b91",
+								"id": "4af4ad4b-95b9-4364-988a-4635fb3988c2",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -443,7 +443,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvNEBnbWFpbC5jb20iLCJpYXQiOjE1OTkxNDI1NzEsImV4cCI6MTYwNDMyNjU3MX0.VE_T7TSACRkMijQHc3EYVJXobvX9WRpN1NHI9Hd6CNY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE1OTk4Nzk2MzAsImV4cCI6MTYwNTA2MzYzMH0.mHuRLveel_BhLWF4Yw_6NFlEURxlcO51zRshCxZ3ESw",
 									"type": "string"
 								}
 							]
@@ -482,7 +482,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "868bda6a-b4f8-4ff1-b9e6-15f1e39d1c79",
+								"id": "9209c0ff-765e-47d6-8a55-a811f886b40e",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -503,7 +503,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvNEBnbWFpbC5jb20iLCJpYXQiOjE1OTkxNDI1NzEsImV4cCI6MTYwNDMyNjU3MX0.VE_T7TSACRkMijQHc3EYVJXobvX9WRpN1NHI9Hd6CNY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE1OTk4Nzk2MzAsImV4cCI6MTYwNTA2MzYzMH0.mHuRLveel_BhLWF4Yw_6NFlEURxlcO51zRshCxZ3ESw",
 									"type": "string"
 								}
 							]
@@ -519,7 +519,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"caption\": \"Welcome\",\n    \"url\": \"test.jpg\"\n}"
+							"raw": "{\n    \"caption\": \"Xander Again!\",\n    \"url\": \"xander0.jpg\"\n}"
 						},
 						"url": {
 							"raw": "{{host}}/api/v0/feed",
@@ -542,7 +542,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bbefac60-70dd-47bc-b96f-35715945dbad",
+								"id": "392611a9-39a2-44c7-928c-5bc680e79118",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -558,7 +558,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvNEBnbWFpbC5jb20iLCJpYXQiOjE1OTkxNDI1NzEsImV4cCI6MTYwNDMyNjU3MX0.VE_T7TSACRkMijQHc3EYVJXobvX9WRpN1NHI9Hd6CNY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE1OTk4Nzk2MzAsImV4cCI6MTYwNTA2MzYzMH0.mHuRLveel_BhLWF4Yw_6NFlEURxlcO51zRshCxZ3ESw",
 									"type": "string"
 								}
 							]
@@ -601,7 +601,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1a65d24c-11bd-4884-9c71-8e5a9bd5492e",
+								"id": "f08f293a-3998-4230-9631-9bcf3c2c333b",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -622,7 +622,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvNEBnbWFpbC5jb20iLCJpYXQiOjE1OTkxNDI1NzEsImV4cCI6MTYwNDMyNjU3MX0.VE_T7TSACRkMijQHc3EYVJXobvX9WRpN1NHI9Hd6CNY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE1OTk4Nzk2MzAsImV4cCI6MTYwNTA2MzYzMH0.mHuRLveel_BhLWF4Yw_6NFlEURxlcO51zRshCxZ3ESw",
 									"type": "string"
 								}
 							]
@@ -638,10 +638,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"caption\": \"Elastic Beanstalk\",\n    \"url\": \"figure.jpg\"\n}"
+							"raw": "{\n    \"caption\": \"New Xander\",\n    \"url\": \"xander2.jpg\"\n}"
 						},
 						"url": {
-							"raw": "{{host}}/api/v0/feed/2",
+							"raw": "{{host}}/api/v0/feed/9",
 							"host": [
 								"{{host}}"
 							],
@@ -649,7 +649,7 @@
 								"api",
 								"v0",
 								"feed",
-								"2"
+								"9"
 							]
 						},
 						"description": "Update a feed item"
@@ -671,7 +671,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f7a7ab6d-35fb-4510-a313-9dfa0b1f09ba",
+						"id": "5c7dc67b-5513-475f-b659-d745ea434b12",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -681,7 +681,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ec35248d-dd6b-4f17-a374-21d654ed125a",
+						"id": "6fe489d4-2517-4825-a040-86645070f215",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -696,7 +696,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "77251b40-4d81-46bf-ae56-82abbfcb59f3",
+				"id": "74c66448-9181-4f15-96dc-63d3bde6726f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -706,7 +706,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "16128379-0848-49c8-8bff-82bcda495c76",
+				"id": "00fc8cb1-361e-4db8-b4c3-6138261aad60",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -716,14 +716,9 @@
 	],
 	"variable": [
 		{
-			"id": "c4138bdc-5ff9-46aa-8ead-c6c103bf1cc6",
+			"id": "41b38549-a310-47c0-b498-55215893557a",
 			"key": "host",
-			"value": "http://localhost:8080"
-		},
-		{
-			"id": "1e563aac-6f8e-425a-bc0d-3a468ad0f430",
-			"key": "host2",
-			"value": ""
+			"value": "http://restapi.udagram-dtm.com"
 		}
 	],
 	"protocolProfileBehavior": {}
