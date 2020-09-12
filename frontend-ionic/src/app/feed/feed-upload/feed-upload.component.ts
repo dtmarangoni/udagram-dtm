@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api/api.service';
 
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FeedProviderService } from '../services/feed.provider.service';
@@ -48,17 +47,22 @@ export class FeedUploadComponent implements OnInit {
         this.setPreviewDataUrl(this.file);
     }
 
-    onSubmit($event) {
+    async onSubmit($event) {
         $event.preventDefault();
-        this.loadingController.create();
-
         if (!this.uploadForm.valid || !this.file) {
             return;
         }
-        this.feed.uploadFeedItem(this.uploadForm.controls.caption.value, this.file).then((result) => {
-            this.modalController.dismiss();
-            this.loadingController.dismiss();
-        });
+        const loadingCtrl = await this.loadingController.create({ message: 'Posting feed, please wait...' });
+        await loadingCtrl.present();
+        this.feed
+            .uploadFeedItem(this.uploadForm.controls.caption.value, this.file)
+            .then((result) => {
+                this.modalController.dismiss();
+                loadingCtrl.dismiss();
+            })
+            .catch((error) => {
+                loadingCtrl.dismiss();
+            });
     }
 
     cancel() {
